@@ -31,13 +31,13 @@ def buscar_contato(contato):
   
 #Definição da mensagem
 def enviar_mensagem(mensagem):
+ for k in range(400): 
   campo_mensagem = driver.find_elements_by_xpath('//div[contains(@class, "copyable-text selectable-text")]')
   campo_mensagem[1].click()
   time.sleep(3)
   campo_mensagem[1].send_keys(mensagem)
   campo_mensagem[1].send_keys(Keys.ENTER)
   
-   
 for contato in contatos:
     
     buscar_contato(contato)
